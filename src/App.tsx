@@ -7,8 +7,8 @@ function App() {
   
   // Seus 2 números do WhatsApp
   const whatsappNumbers = [
-    '554499372336', // WhatsApp 1
-    '554499372337'  // WhatsApp 2 - SUBSTITUA pelo seu segundo número
+    '554497115382', // WhatsApp 1
+    '554499372336'  // WhatsApp 2
   ];
   
   const handleWhatsAppClick = () => {
