@@ -1,7 +1,27 @@
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
+import { useState } from 'react';
 
 function App() {
+  // Sistema de alternância entre os números
+  const [currentNumber, setCurrentNumber] = useState(0);
+  
+  // Seus 2 números do WhatsApp
+  const whatsappNumbers = [
+    '554499372336', // WhatsApp 1
+    '554499372337'  // WhatsApp 2 - SUBSTITUA pelo seu segundo número
+  ];
+  
+  const handleWhatsAppClick = () => {
+    // Pega o número atual
+    const phoneNumber = whatsappNumbers[currentNumber];
+    
+    // Alterna para o próximo número (0 -> 1 -> 0 -> 1...)
+    setCurrentNumber((prev) => (prev + 1) % whatsappNumbers.length);
+    
+    // Abre o WhatsApp
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=Quero%20receber%20minha%20revelação`;
+    window.open(whatsappUrl, '_blank');
+  };
   return (
     <div className="min-h-screen relative overflow-hidden bg-gray-900 flex flex-col">
       {/* Background Image */}
@@ -50,7 +70,7 @@ function App() {
           <div className="w-full">
             <button 
               className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-base flex items-center justify-center gap-3 animate-pulse"
-              onClick={() => window.open('https://api.whatsapp.com/send?phone=554499372336&text=Quero%20receber%20minha%20revelação', '_blank')}
+              onClick={handleWhatsAppClick}
             >
               💬 Receber minha revelação
             </button>
