@@ -1,25 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
 
 function App() {
-  // Sistema de alternância entre os números
-  const [currentNumber, setCurrentNumber] = useState(0);
-  
-  // Seus 2 números do WhatsApp
-  const whatsappNumbers = [
-    '554497115382', // WhatsApp 1
-    '554499372336'  // WhatsApp 2
-  ];
-  
   const handleWhatsAppClick = () => {
-    // Pega o número atual
-    const phoneNumber = whatsappNumbers[currentNumber];
-    
-    // Alterna para o próximo número (0 -> 1 -> 0 -> 1...)
-    setCurrentNumber((prev) => (prev + 1) % whatsappNumbers.length);
-    
-    // Abre o WhatsApp
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=Quero%20receber%20minha%20revelação`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=554499372336&text=Quero%20receber%20minha%20revelação`;
     window.open(whatsappUrl, '_blank');
   };
   return (
