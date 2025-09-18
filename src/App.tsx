@@ -2,7 +2,7 @@ import React from 'react';
 
 function App() {
   const handleWhatsAppClick = () => {
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=554499372336&text=Quero%20receber%20minha%20revelação`;
+    const whatsappUrl = `https://vortexfuturo.com.br/WhatsApp`;
     window.open(whatsappUrl, '_blank');
   };
   return (
